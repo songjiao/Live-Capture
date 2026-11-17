@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wxcap"
+version = "0.1.0"
+description = "微信视频号直播流捕获与录制工具（个人研究用途）"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+wxcap = "live_capture.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["live_capture*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
